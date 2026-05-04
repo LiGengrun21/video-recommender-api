@@ -59,7 +59,7 @@ public class MovieRepository {
             //数据库读到空地址，则填入默认地址
             String picture=(document.getString("picture"));
             if (picture==null || picture=="" || picture.isEmpty()){
-                movieDisplay.setPictureUrl("https://images.unsplash.com/photo-1522770179533-24471fcdba45");
+                movieDisplay.setPictureUrl("http://localhost:8099/images/default.jpg");
             }
             else{
                 movieDisplay.setPictureUrl(picture);
@@ -98,7 +98,7 @@ public class MovieRepository {
             String picture=(movieDocument.getString("picture"));
             //System.out.println("CFRec picture:"+picture);
             if (picture==null || picture=="" ||picture.isEmpty()){
-                movieDisplay.setPictureUrl("https://images.unsplash.com/photo-1522770179533-24471fcdba45");
+                movieDisplay.setPictureUrl("http://localhost:8099/images/default.jpg");
             }
             else{
                 movieDisplay.setPictureUrl(picture);
@@ -138,7 +138,7 @@ public class MovieRepository {
             String picture=(movieDocument.getString("picture"));
             //System.out.println("MostViewedRec picture:"+picture);
             if (picture==null || picture=="" ||picture.isEmpty()){
-                movieDisplay.setPictureUrl("https://images.unsplash.com/photo-1522770179533-24471fcdba45");
+                movieDisplay.setPictureUrl("http://localhost:8099/images/default.jpg");
             }
             else{
                 movieDisplay.setPictureUrl(picture);
@@ -178,7 +178,7 @@ public class MovieRepository {
             String picture=(movieDocument.getString("picture"));
             //System.out.println("TopRated picture:"+picture);
             if (picture==null || picture=="" ||picture.isEmpty()){
-                movieDisplay.setPictureUrl("https://images.unsplash.com/photo-1522770179533-24471fcdba45");
+                movieDisplay.setPictureUrl("http://localhost:8099/images/default.jpg");
             }
             else{
                 movieDisplay.setPictureUrl(picture);

@@ -59,13 +59,16 @@ object CFEvaluation {
    * @param testData 测试集
    */
   def AdjustParams(trainingData: RDD[Rating], testData: RDD[Rating]): Unit = {
-    val result = for (rank <- Array(20, 50, 100); lambda <- Array(0.01, 0.01, 0.1))
+    val result = for (rank <- Array(10,100,1000,10000); lambda <- Array(0.01,0.1,1))
       yield {
-        val model = ALS.train(trainingData, rank, 50, lambda) //训练模型
+        val model = ALS.train(trainingData, rank, 5, lambda) //训练模型
         val rmse = getRMSE(model, testData) //计算RMSE
         (rank, lambda, rmse) //保存这三个参数
       }
-    println(result.minBy(_._3)) //根据rmse作比较，选取rmse最小的一组数据
+    println("最优参数："+result.minBy(_._3)) //根据rmse作比较，选取rmse最小的一组数据
+    result.foreach { case (rank, lambda, rmse) =>
+      println(s"Rank: $rank, Lambda: $lambda, RMSE: $rmse")
+    }
   }
 
   /**
