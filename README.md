@@ -15,6 +15,8 @@ At a high level:
 2. Offline Spark jobs generate recommendation results.
 3. Backend APIs read recommendation collections and return results to clients.
 
+[video recommender frontend repo](https://github.com/LiGengrun21/video-recommender-ui)
+
 ## Tech Stack
 
 - **Language**: Java, Scala
